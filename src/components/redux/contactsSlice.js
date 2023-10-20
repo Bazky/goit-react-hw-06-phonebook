@@ -12,7 +12,7 @@ const contactsSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
-      .addCase(loadContacts, (state, action) => {
+      .addCase(loadContacts, state => {
         const storedContacts = localStorage.getItem('contacts');
         if (storedContacts) {
           state.contacts = JSON.parse(storedContacts);
