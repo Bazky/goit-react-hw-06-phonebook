@@ -1,5 +1,6 @@
 import { createSlice, createAction } from '@reduxjs/toolkit';
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 
 export const loadContacts = createAction('contacts/load');
 export const addContact = createAction('contacts/add');
@@ -36,3 +37,14 @@ const contactsSlice = createSlice({
 });
 
 export default contactsSlice.reducer;
+
+contactsSlice.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
+  filter: PropTypes.string.isRequired,
+};

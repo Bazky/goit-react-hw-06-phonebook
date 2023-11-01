@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setFilter } from '../components/redux/contactsSlice';
+import { setFilter } from '../redux/contactsSlice';
 import PropTypes from 'prop-types';
 
 export const Filter = () => {
